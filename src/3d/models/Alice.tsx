@@ -28,20 +28,20 @@ export const Alice = () => {
   rightUpperArm.rotation.set(-1, -1, 1)
   leftLowerArm.rotation.set(0, 2.5, -1.75)
   rightLowerArm.rotation.set(0, -2.5, 1.75)
-  leftHand.rotateX(2)
-  rightHand.rotateX(2)
-  head.rotateX(0.5)
-  chest.rotateX(1)
-  hips.rotateX(-1.5)
-  spine.rotateX(0.25)
-  leftLowerLeg.rotateX(1)
-  rightLowerLeg.rotateX(0.5)
+  leftHand.rotation.set(2, 0, 0)
+  rightHand.rotation.set(2, 0, 0)
+  head.rotation.set(0.5, 0, 0)
+  chest.rotation.set(1, 0, 0)
+  hips.rotation.set(-1.5, 0, 0)
+  spine.rotation.set(0.25, 0, 0)
+  leftLowerLeg.rotation.set(1, 0, 0)
+  rightLowerLeg.rotation.set(0.5, 0, 0)
 
   // Close eyes
   vrm.expressionManager?.setValue(VRMExpressionPresetName.Blink, 1)
+  vrm.expressionManager?.update()
 
   useFrame((_, delta) => {
-    vrm.expressionManager?.update()
     vrm.update(delta)
   })
 
