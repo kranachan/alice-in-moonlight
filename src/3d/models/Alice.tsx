@@ -40,7 +40,7 @@ export const Alice = () => {
   // Close eyes
   vrm.expressionManager?.setValue(VRMExpressionPresetName.Blink, 1)
 
-  useFrame(({ clock }, delta) => {
+  useFrame((_, delta) => {
     vrm.expressionManager?.update()
     vrm.update(delta)
   })
