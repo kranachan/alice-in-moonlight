@@ -5,12 +5,12 @@ import {
   DepthOfField,
   EffectComposer,
 } from '@react-three/postprocessing'
-import { Center, Float, OrbitControls } from '@react-three/drei'
+import { Center, Float, Loader, OrbitControls } from '@react-three/drei'
 import { Alice } from '../models/Alice'
 
 export const Moonlight: FC<SceneProps> = () => {
   return (
-    <Suspense fallback={null}>
+    <Suspense fallback={<Loader />}>
       <Canvas
         style={{
           width: '100vw',
